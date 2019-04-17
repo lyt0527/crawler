@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/index.js"></script>
+		<script type="text/javascript" src="/static/js/echarts-en.common.js"></script>
+	</head>
+	<body>
+		<div class="data">
+			<div class="head">
+				<span>日期</span>
+				<!-- <span>平台</span> -->
+				<span>类别</span>
+			</div>
+			<div class="content">
+				<div class="date">
+					<!-- <input type="button" value="▲" onclick="dateMinus()" />
+					<div class="dates">
+						<span id="date1">...</span>
+						<span id="date2">...</span>
+						<span id="date3">...</span>
+						<span id="date4">...</span>
+						<span id="date5">...</span>
+					</div>
+					<input type="button" value="▼" onclick="datePlus()" /> -->
+					<div class="dateRange">
+						<input type="date" id="dateStart"/>
+						<div>至</div>
+						<input type="date" id="dateEnd"/>
+						<input type="button" value="确定" id="confirmDate" onclick="confirmDate()" />
+					</div>
+				</div>
+				<!-- <div class="platform">
+					<ul class="platformList">
+						<li onclick="listOperation1(this)" value="0">总数</li>
+						<li onclick="listOperation1(this)" value="0">充电平台</li>
+						<li onclick="listOperation1(this)" value="0">二手车平台</li>
+						<li onclick="listOperation1(this)" value="0">客服系统</li>
+						<li onclick="listOperation1(this)" value="0">E+优品商城</li>
+						<li onclick="listOperation1(this)" value="0">体验小程序</li>
+						<li onclick="listOperation1(this)" value="0">官方商城</li>
+						<li onclick="listOperation1(this)" value="0">服务系统</li>
+					</ul> -->
+				</div>
+				<div class="type">
+					<ul class="typeList">
+						<li onclick="listOperation2(this)" style="color: #29DACC;" flag='1'>总览</li>
+						<li onclick="listOperation2(this)" flag='0'>高分</li>
+						<li onclick="listOperation2(this)" flag='0'>低分</li>
+						<li onclick="listOperation2(this)" flag='0'>未评分</li>
+					</ul>
+				</div>
+				<div class="statistic">
+					<div id="diagram"></div>
+				</div>
+			</div>
+		</div>
+		<div class="info">
+			<div class="showInfo">
+				<div class="subTitle">评论待处理</div>
+				<div class="diffrentTimeMonth">
+					<span><img src="/static/images/time3.png"/>一个月</span>
+					<input type="button" value="查看" onclick='todetail(this)' />
+					<span class="num"><span id='commentMonth'></span>条</span>
+				</div>
+				<div class="diffrentTimeWeek">
+					<span><img src="/static/images/time1.png"/>一周</span>
+					<input type="button" value="查看" onclick='todetail(this)' />
+					<span class="num"><span id='commentWeek'></span>条</span>
+				</div>
+				<div class="diffrentTimeToday">
+					<span><img src="/static/images/time2.png"/>今天</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='commentToday'></span>条</span>
+				</div>
+			</div>
+
+			<div class="showInfo">
+				<div class="subTitle">评价待处理</div>
+				<div class="diffrentTimeMonth">
+					<span><img src="/static/images/time3.png"/>一个月</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='judgementMonth'></span>条</span>
+				</div>
+				<div class="diffrentTimeWeek">
+					<span><img src="/static/images/time1.png"/>一周</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='judgementWeek'></span>条</span>
+				</div>
+				<div class="diffrentTimeToday">
+					<span><img src="/static/images/time2.png"/>今天</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='judgementToday'></span>条</span>
+				</div>
+			</div>
+			<div class="showInfo">
+				<div class="subTitle">高分库</div>
+				<div class="diffrentTimeMonth">
+					<span><img src="/static/images/time3.png"/>一个月</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='highMonth'></span>条</span>
+				</div>
+				<div class="diffrentTimeWeek">
+					<span><img src="/static/images/time1.png"/>一周</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='highWeek'></span>条</span>
+				</div>
+				<div class="diffrentTimeToday">
+					<span><img src="/static/images/time2.png"/>今天</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='highToday'></span>条</span>
+				</div>
+			</div>
+			<div class="showInfo">
+				<div class="subTitle">低分库</div>
+				<div class="diffrentTimeMonth">
+					<span><img src="/static/images/time3.png"/>一个月</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='lowMonth'></span>条</span>
+				</div>
+				<div class="diffrentTimeWeek">
+					<span><img src="/static/images/time1.png"/>一周</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='lowWeek'></span>条</span>
+				</div>
+				<div class="diffrentTimeToday">
+					<span><img src="/static/images/time2.png"/>今天</span>
+					<input type="button" value="查看" onclick='todetail(this)'/>
+					<span class="num"><span id='lowToday'></span>条</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

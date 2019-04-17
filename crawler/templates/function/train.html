@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/train.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/train.js"></script>
+	</head>
+	<body>
+		<div class="tips">
+			<span id="words1">是否需要进行数据更新保存？</span>
+			<input type="button" value="开始" onclick="train()"/>
+		</div>
+		<div class="tips">
+			<img id="tipImg1" src="/static/images/progress.gif" />
+			<span id="words2">正在更新···</span>
+		</div>
+		<div class="tips">
+			<img id="tipImg2" src="/static/images/hooking.gif" />
+			<span id="words3">数据已保存并训练！</span>
+			<input type="button" value="返回" onclick="returnBack()"/>
+		</div>	
+	</body>
+</html>

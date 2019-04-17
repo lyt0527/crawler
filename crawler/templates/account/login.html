@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/login.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/login.js"></script>
+	</head>
+	<body>
+		<div class="head">
+			<img id="logo" src="/static/images/logo_noword.png" />
+			<div class="Chinese_head">宝骏新能源评论预警系统</div></br>
+			<div class="English_head">BAOJUNXINNENGYUANPINGLUNYUJINGXITONG</div>
+		</div>
+		<div class="content">
+			<div class="title">登录</div>
+			<div class="info">
+				{% csrf_token %}
+				<img id="loginImg" src="/static/images/userlogin.png" /> <input id="account" type="text" value="登录账号" onfocus="clearContent(this)" />
+				<img id="pswImg" src="/static/images/password.png" /> <input id="password" type="text" value="登录密码" onfocus="clearContent(this)"/>
+				<a style="text-decoration: none;"><input type="button" id="submit" value="登  录" onclick="login()" /></a>
+			</div>
+		</div>
+	</body>
+</html>

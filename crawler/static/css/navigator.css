@@ -1,0 +1,125 @@
+body{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background-color: #f2f2f2;
+	color: #333333;
+	font-family: "microsoft yahei";
+}
+.head{
+	width: 100%;
+	height: 88px;
+	line-height: 88px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #333333;
+	background-color: white;
+	font-size: 29px;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	letter-spacing: 2px;
+}
+#logo1{
+	float: left;
+	width: 80px;
+	height: 80px;
+	padding: 8px;
+}
+#logo2{
+	float: left;
+	width: 174px;
+	height: 28px;
+	padding: 8px;
+	margin-top: 23px;
+}
+.msg:hover{
+	cursor: pointer;
+}
+.welcome,.msg,.userName,.quit{
+	float: right;
+	display: inline-block;
+	font-family: "microsoft yahei";
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0 36px 0 8px;
+}
+.quit:hover{
+	cursor: pointer;
+}
+.line{
+	float: right;
+	display: inline-block;
+	font-family: "microsoft yahei";
+	font-size: 20px;
+	font-weight: normal;
+	margin: -2px 12px 0 16px;
+	color: #CCCCCC;
+}
+.nav{
+	position: absolute;
+	top: 96px;
+	left: 0;
+	margin: 0 8px 0 -2px;
+	background-color: white;
+	list-style: none;
+	height: 524px;
+	width: 182px;
+}
+ul{
+	padding: 0;
+}
+li{
+	list-style: none;
+	margin: 0;
+	text-align: left;
+	padding: 18px 30px;
+}
+.index{
+	margin-top: -16px;
+	text-align: center;
+	padding: 38px 30px;
+	background-color: #29DACC;
+	color: white;
+}
+#index{
+	display: block;
+}
+li:hover{
+	background-color: #29DACC;
+	color: white;
+	cursor: pointer;
+}
+#frame{
+	position: absolute;
+	top: 96px;
+	left: 184px;
+	frameborder: no;
+	width: 86.5%;
+	height: 800px;
+}
+#index{
+	display: block;
+	width: 36px;
+	height: 32px;
+	margin: 4px 42px;
+}
+.indexBox{
+	width: 100%;
+	text-align: center;
+}
+#high,#low,#unprocessedComment,#unprocessedJudgement,#train,#rejudge{
+	display: inline-block;
+	margin-right: 8px;
+	vertical-align: bottom;
+	width: 18px;
+	height: 18px;
+}
+.title img{
+	display: inline-block;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/rejudge.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/rejudge.js"></script>
+	</head>
+	<body>
+		<div class="progress"></div>
+		<div class="progress">
+			<img id="tipImg1" src="/static/images/progress.gif" />
+			<span id="words1">正在更新···</span>
+		</div>
+		<div class="progress">
+			<img id="tipImg2" src="/static/images/hooking.gif" />
+			<span id="words2">更新成功！系统已重新打分！</span>
+		</div>
+		<div id="historyData">
+			<div class="box" id="leftBox">
+				<div class="title">上次更新</div>
+				<div>
+					<div><span>正确率：</span><span id="rightRateLast">94%</span> </div>
+					<div><span>总数：</span><span id="allLast">45632</span> </div>
+					<div><span>正确数：</span><span id="rightNumLast">45000</span> </div>
+					<div><span>错误数：</span><span id="wrongNumLast">632</span> </div>
+				</div>
+				<div class="time">上次更新时间
+					<div class="updateTime" id="lastTime">。。。</div>
+				</div>
+			</div>
+		</div>
+		<div id="currentData">
+			<div class="box">
+				<div class="title">当前更新</div>
+				<div>
+					<div><span>正确率：</span><span id="rightRateNow">0%</span> </div>
+					<div><span>总数：</span><span id="allNow">0</span> </div>
+					<div><span>正确数：</span><span id="rightNumNow">0</span> </div>
+					<div><span>错误数：</span><span id="wrongNumNow">0</span> </div>
+				</div>
+				<div class="time">刚才更新时间
+					<div class="updateTime" id="justnow"></div>
+				</div>
+			</div>
+			<div style="text-align: center;">
+				<input type="button" value="更新" onclick="rejudge()" />
+			</div>
+		</div>
+	</body>
+</html>

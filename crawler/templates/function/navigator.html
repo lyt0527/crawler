@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/navigator.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/navigator.js"></script>
+	</head>
+	<body>
+		<div class="head">
+			<img id="logo1" src="/static/images/logo_noword.png" /><img id="logo2" src="/static/images/logo_word.png" />
+			<div class="title">评论预警系统
+				<a href="/account/logout"><div class="quit"><span id="quit"><img src="/static/images/quit.png"/>退出</span></div></a>
+				<span class="line">|</span>
+				<div class="userName"><img src="/static/images/user.png"/><span id="userName">用户名</span></div>
+				<div class="msg" onclick="tomessage()"><img src="/static/images/message.png"/>消息(<span id="msgNum" style="color: #FF9800;">0</span>)</div>
+				<span class="welcome">欢迎语!!!</span>				
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="index" onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="index" src="/static/images/index_01.png"/>主页</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="high" src="/static/images/high.png"/>高分库</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="low" src="/static/images/low.png"/>低分库</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="unprocessedComment" src="/static/images/comment.png"/>评论待处理</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="unprocessedJudgement" src="/static/images/judgement.png"/>评价待处理</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="train" src="/static/images/train.png"/>训练模型</li>
+				<li onclick="changeAfterClick(this)" onmouseover="mouseover(this)" onmouseout="mouseout(this)"><img id="rejudge" src="/static/images/rejudge.png"/>系统重新评分</li>
+			</ul>
+		</div>
+		<iframe id="frame" src="/function/index/" frameborder="no" scrolling="no">
+			
+		</iframe>
+	</body>
+</html>

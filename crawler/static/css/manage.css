@@ -1,0 +1,211 @@
+ .wrapper{
+	display: inline-block;
+	margin: 2%;
+	background-color: white;
+	width: 96%;
+	border: 5px solid #f0f0f0;
+}
+h2,div{
+	font-family: sans-serif;
+	color: #4f4f4f;
+}
+.wrapper h2{
+	font-size: 24px;
+	margin: 20px 20px 0 60px;
+	padding: 15px 0 20px 30px;
+	letter-spacing: 2px;
+}
+
+.toppart,.bottompart,.add_personnel{
+	border: 1px solid #d0d0d0;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 60px;
+	overflow: hidden;
+}
+.bottompart{
+	text-align: center;
+}
+.search,.add{
+	border: 1px solid #d0d0d0;
+	border-radius: .25rem;
+	padding: 20px;
+	margin: 10px 10px 10px 70px;
+	overflow: hidden;
+}
+.add{
+	margin-right: 90px;
+	float: right;
+}
+.search{
+	float: left;
+}
+
+p{
+	padding: 0 15px;
+	margin-top: -21px;
+	background-color: #0099DB;
+	color: white;
+	font-size: 14px;
+	letter-spacing: 1px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 0 0 .4rem .4rem;
+}
+.search p{
+	width: 100px;
+}
+.add p{
+	width: 40px;
+}
+.search_name{
+	float: left;
+	margin:5px 0 5px 15px  ;
+}
+.search_tel{
+	float: left;
+	margin:5px 15px 5px -30px ;
+}
+
+.txt{
+    display: inline-block;
+    width: 45%;
+    padding: .5rem .25rem .5rem .8rem;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.add_personnel .txt{
+	width: 15%;
+	margin: 5px 35px 5px 5px;
+}
+label{
+	font-size: 14px;
+}
+
+.btn{
+	margin: 5px 5px 5px 0px;
+	padding: 0 15px;
+	height: 30px;
+	border: 1px solid transparent;
+	background-color: #0099DB;
+	color: white;
+	border-radius: .25rem;
+}
+#add_personnel{
+	margin-bottom: 11px;
+}
+
+.data{
+	display: inline-block;
+	width: 90%;
+}
+table,thead,tbody,tr,th,td{
+	border: 0;
+}
+table{
+	padding: 10px 30px;
+	width: 100%;
+}
+th,td{
+	text-align: center;
+	height: 40px;
+}
+thead{
+	background-color: #46a3ff;
+}
+.odd{
+	background-color:#ddddff ;
+}
+.even{
+	background-color:#c4e1ff ;
+}
+.name{
+	width: 100px;
+	text-align: center;
+}
+.tel{
+	width: 200px;
+	text-align: center;
+}
+.modify{
+	background-color: #ececff;
+	border: 1px solid #d0d0d0;
+	height: 30px;
+	width: 50px;
+	border-radius: .25rem;
+	margin: 0 5px;
+}
+.delete{
+	background-color: #ff8040;
+	border: 1px solid #d0d0d0;
+	height: 30px;
+	width: 50px;
+	border-radius: .35rem;
+	margin: 0 10px;
+	color: #4f4f4f;
+}
+.btn_change{
+	background-color: white;
+	border: 1px solid #0080FF;
+	height: 40px;
+	width: 80px;
+	border-radius: .35rem;
+	margin: 0 10px;
+}
+
+.btn:hover{
+	font-weight: bold;
+	background-color: #0080FF;
+	cursor: pointer;
+}
+.modify:hover{
+	background-color: #0080FF;
+	color: white;
+	cursor: pointer;
+}
+.delete:hover{
+	background-color: #ff0000;
+	color: white;
+	cursor: pointer;
+}
+.btn_change:hover{
+	background-color: #0099DB;
+	color: white;
+	cursor: pointer;
+}
+h3{
+	padding: 0 15px;
+	width: 15%;
+	margin: -21px 0 10px 90px;
+	background-color: #0099DB;
+	color: white;
+	font-size: 20px;
+	letter-spacing: 1px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 0 0 .4rem .4rem;
+}
+.add_personnel h3{
+	font-size: 18px;
+	padding:0 5px;
+	margin: -21px 0 10px 30px;
+}
+.name,.tel{
+	border: none;
+	background-color: transparent;
+}
+
+.info{
+	margin: 30px;
+}
+#123 {
+    text-align: center;
+}

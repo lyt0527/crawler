@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/comment.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/comment.js"></script>
+	</head>
+	<body>
+		<div class="filterConditions">
+			<div>
+				订单号<input type="text" id="orderNo" />
+				姓名<input type="text" id="userName" />
+				来源<select id="platform">
+					<option></option><option>充电平台</option>
+					<option>二手车平台</option><option>客服系统</option>
+					<option>E+优品商城</option><option>体验小程序</option>
+					<option>官方商城</option><option>服务系统</option>
+				</select>
+				电话<input type="text" id="tel" />
+			</div>
+			<div>
+				时间<input type="date" id="startTime" />至<input type="date" id="endTime" />
+				评分<input type="text" id="lowScore" />至<input type="text" id="highScore" />
+				回复状态<select id="replyState">
+					<option></option>
+					<option>未回访</option><option>已回访</option>
+				</select>
+			</div>
+		</div>
+		<div class="operations">
+			<div class="btns">
+				<input type="button" value="搜索" id="search" onclick="search()"/>
+				<input type="button" value="清除条件" id="clearConditions" onclick="clearConditions()"/>
+			</div>
+			<button id="fileOut" onclick="fileOut()"><img src="/static/images/fileOut.png"/>导出</button>
+		</div>
+		<div class="commentList">
+			<table>
+				<thead>
+					<tr>
+						<th class="No">编号</th><th class="name">姓名</th>
+						<th class="platform">来源</th><th class="catchTime">抓取时间</th>
+						<th class="commentTime">评论时间</th><th class="score">评分</th>
+						<th class="detail">操作</th>
+					</tr>
+				</thead>
+				<tbody id="content">
+				</tbody>
+			</table>
+			<div class="turnPages">
+				<input type="button" value="上一页" onclick="previous()"/>
+				<span id="currentPage">1</span>/
+				<span id="allPage"></span>
+				<input type="button" value="下一页" onclick="next()"/>
+				<div>跳转到
+					<input type="text" id="targetPage"/>页
+					<input type="button" value="确定" onclick="toCertainPage()" />
+				</div>
+			</div>
+		</div>
+		<div class="commentDetail">
+			<div class="commentTitle">评论详情</div>
+			<form>
+				<div>
+					<label>No.</label><span id="replyNo1">---</span>
+				</div>
+				<div>
+					<label>用户昵称</label><span id="commentUserName1">---</span>
+				</div>
+				<div>
+					<label>ID</label><span id="replyID1">---</span>
+				</div>
+                <div>
+					<label>来源</label><span id="replyPlatform1">---</span>
+				</div>
+				<div>
+					<label>评论时间</label><span id="replyCommentTime1">---</span>
+				</div>
+				<div>
+					<label>抓取时间</label><span id="replyCatchTime1">---</span>
+				</div>
+				<div>
+					<label>抓取地址</label><span id="replyAddress1">---</span>
+				</div>
+				<div>
+					<label>评论内容</label>
+					<div>
+						<textarea id="commentContent1" readonly=""></textarea>
+					</div>
+				</div>
+			</form>
+			<div class="commentOperation">
+				<div class="commentOperationTitle">评分操作</div>
+				<div>
+					<label>系统评分</label><span id="sysScore1">---</span>
+					<label>人工评分</label><span id="artiScore1">---</span>
+				</div>
+				<div>
+					<label>评分修正</label>
+					<input type="text" id="newScore1"/>
+					<input type="button" value="确定" onclick="submitNew()"/>
+					<input type="button" value="回访" id="reply1" onclick="showReply()" />
+				</div>
+			</div>
+			<div class="changeItem">
+				<input type="button" value="上一条" onclick="changeItem(this)"/>
+				<input type="button" value="下一条" onclick="changeItem(this)"/>
+			</div>
+		</div>
+        <div class="commentDetail">
+			<div class="commentTitle">评价详情</div>
+			<form>
+				<div>
+					<label>No.</label><span id="replyNo2">---</span>
+				</div>
+				<div>
+					<label>用户昵称</label><span id="commentUserName2">---</span>
+				</div>
+				<div>
+					<label>ID</label><span id="replyID2">---</span>
+				</div>
+                <div>
+					<label>来源</label><span id="replyPlatform2">---</span>
+				</div>
+				<div>
+					<label>电话</label><span id="replyTelNum2">---</span>
+				</div>
+				<div>
+					<label>订单号</label><span id="replyOrder2">---</span>
+				</div>
+				<div>
+					<label>物流服务</label><span id="replyDelivery2">---</span>
+				</div>
+				<div>
+					<label>服务态度</label><span id="replyService2">---</span>
+				</div>
+				<div>
+					<label>产品质量</label><span id="replyProduct2">---</span>
+				</div>
+				<div>
+					<label>分数</label><span id="replyScore2">---</span>
+				</div>
+				<div>
+					<label>评论时间</label><span id="replyCommentTime2">---</span>
+				</div>
+				<div>
+					<label>抓取地址</label><span id="replyAddress2">---</span>
+				</div>
+				<div>
+					<label>评论内容</label>
+					<div>
+						<textarea id="commentContent2" readonly="" style="height: 60px;"></textarea>
+					</div>
+				</div>
+			</form>
+			<div class="commentOperation">
+				<div class="commentOperationTitle">评分操作</div>
+				<div>
+					<label>系统评分</label><span id="sysScore2">---</span>
+					<label>人工评分</label><span id="artiScore2">---</span>
+				</div>
+				<div>
+					<label>评分修正</label>
+					<input type="text" id="newScore2"/>
+					<input type="button" value="确定" onclick="submitNew()"/>
+					<input type="button" value="回访" id="reply2" onclick="showReply()" />
+				</div>
+			</div>
+			<div class="changeItem">
+				<input type="button" value="上一条" onclick="changeItem(this)"/>
+				<input type="button" value="下一条" onclick="changeItem(this)"/>
+			</div>
+		</div>
+		<div class="tip">
+			<div>
+				<img src="/static/images/computer.png" />
+				<img id="progress" src="/static/images/progress.gif"/>
+				<img src="/static/images/fileOutStatic.png"/>
+			</div>
+			<span>正在处理······</span>
+		</div>
+		<div class="replyBox">
+			<div class="replyTitle">回访</div>
+			<img src="/static/images/close-circle.png" onclick="closeReply()" />
+			<div class="replyInfo">
+				<div><span>No.</span></span><span id="replyNum">3</span></div>
+				<div><span>用户姓名/昵称：</span><span id="replyUserName">...</span></div>
+				<div><span>联系方式：</span><span id="replyTel">...</span></div>
+				<div><span>回访内容：</span>
+					<textarea id="history" readonly>123</textarea>
+					<textarea id="replyContent" onclick="clearContent(this)">请输入回访内容...</textarea>
+				</div>
+			</div>
+			<div style="text-align: center;">
+				<input type="button" value="提交" onclick="submitReply()"/>
+			</div>
+		</div>
+	</body>
+</html>

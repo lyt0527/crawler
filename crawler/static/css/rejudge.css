@@ -1,0 +1,110 @@
+body{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background-color: white;
+	color: #808080;
+	font-family: "microsoft yahei";
+}
+.progress{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1128px;
+	padding: 0 24px;
+	height: 120px;
+}
+#historyData{
+	position: absolute;
+	top: 124px;
+	left: 0;
+	width: 588px;
+	height: 380px;
+	border-right: 3px solid #E0E0E0;
+}
+#currentData{
+	position: absolute;
+	top: 124px;
+	left: 588px;
+	width: 588px;
+	height: 380px;
+}
+#historyData,#currentData{
+	text-align: center;
+}
+.box{
+	display: inline-block;
+	width: 160px;
+	text-align: left;
+	margin-top: 40px;
+	font-weight: bold;
+}
+#leftBox{
+	margin-right: -104px;
+}
+.box span{
+	display: inline-block;
+	width: 64px;
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+.title{
+	font-size: 18px;
+	letter-spacing: 1px;
+	border-bottom: 3px solid #29DACC;
+	padding-bottom: 2px;
+	width: 76px;
+	margin-bottom: 12px;
+}
+.time{
+	font-size: 15px;
+	margin-top: 8px;
+}
+#lastTime{
+	color: #CCCCCC;
+}
+#currentData input{
+	width: 120px;
+	height: 32px;
+	line-height: 32px;
+	color: white;
+	background-color: #29DACC;
+	border: 1px solid #29DACC;
+	border-radius: .25rem;
+	margin-top: 40px;
+}
+#currentData input:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+.progress{
+	text-align: center;
+}
+#tipImg1{
+	width: 200px;
+	height: 80px;
+	position: absolute;
+	top: 24px;
+	left: 400px;
+}
+#words1{
+	font-size: 24px;
+	font-weight: bold;
+	position: absolute;
+	top: 46px;
+	left: 600px;
+}
+#tipImg2{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 32px;
+	left: 408px;
+}
+#words2{
+	font-size: 24px;
+	font-weight: bold;
+	position: absolute;
+	top: 46px;
+	left: 480px;
+}

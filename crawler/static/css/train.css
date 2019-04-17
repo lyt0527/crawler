@@ -1,0 +1,65 @@
+body{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background-color: white;
+	color: #808080;
+	font-family: "microsoft yahei";
+}
+.tips{
+	text-align: center;
+	padding: 188px 0;
+	letter-spacing: 1px;
+	font-size: 21px;
+	font-weight: bold;
+}
+input{
+	display: inline-block;
+	margin-top: 128px;
+	width: 164px;
+	height: 32px;
+	font-size: 14px;
+	color: white;
+	background-color: #29DACC;
+	border: 1px solid #29DACC;
+	border-radius: .25rem;
+	position: absolute;
+	top: 280px;
+	left: 480px;
+}
+input:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+#words1{
+	position: absolute;
+	top: 208px;
+	left: 464px;
+	margin-left: -40px;
+}
+#tipImg1{
+	position: absolute;
+	top: 112px;
+	left: 460px;
+	width: 200px;
+	height: 80px;
+}
+#words2{
+	position: absolute;
+	top: 208px;
+	left: 544px;
+	margin-left: -40px;
+}
+#tipImg2{
+	position: absolute;
+	top: 144px;
+	left: 424px;
+	width: 60px;
+	height: 60px;
+}
+#words3{
+	position: absolute;
+	top: 160px;
+	left: 536px;
+	margin-left: -40px;
+}

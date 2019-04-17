@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/message.css" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/message.js"></script>
+	</head>
+	<body>
+		<div class="msgList">
+			<table>
+				<thead>
+					<tr>
+						<th class="warning"></th>
+						<th class="id">ID</th>
+						<th class="commentType">评论类型</th>
+						<th class="time">时间</th>
+						<th class="platform">平台</th>
+						<th class="content">内容</th>
+						<th class="user">用户姓名</th>
+						<th class="score">评分星级</th>
+						<th class="operation">操作</th>
+					</tr>
+				</thead>
+				<tbody id="content">
+				</tbody>
+			</table>
+		</div>
+		<div class="turnPages">
+			<input type="button" value="上一页" onclick="previous()"/>
+			<span id="currentPage">1</span>/
+			<span id="allPage">10</span>
+			<input type="button" value="下一页" onclick="next()"/>
+			<div>跳转到
+				<input type="text" id="targetPage"/>页
+				<input type="button" value="确定" onclick="toCertainPage()" />
+			</div>
+		</div>
+		<div class="commentDetail">
+			<div class="commentTitle">评论详情
+				<img id='closeIcon' src="/static/images/close-circle.png" onclick="closeCard()" />
+			</div>
+			<form>
+				<div>
+					<label>No.</label><span id="commentNo">...</span>
+				</div>
+				<div>
+					<label>用户昵称</label><span id="commentName">...</span>
+				</div>
+				<div>
+					<label>ID</label><span id="commentID">...</span>
+				</div>
+                <div>
+					<label>来源</label><span id="commentPlatform">---</span>
+				</div>
+				<div>
+					<label>评论时间</label><span id="commentTime">...</span>
+				</div>
+				<div>
+					<label>抓取时间</label><span id="catchTime">...</span>
+				</div>
+				<div>
+					<label>抓取地址</label><span id="commentAddress">...</span>
+				</div>
+				<div>
+					<label>评论内容</label>
+					<div>
+						<textarea id="commentContent" readonly="">xxxxxxxxxxxxxx</textarea>
+					</div>
+				</div>
+			</form>
+			<div class="commentOperation">
+				<div class="commentOperationTitle">评分操作</div>
+				<div>
+					<label>系统评分</label><span id="commentSysScore">...</span>
+					<label>人工评分</label><span id="commentArtiScore">...</span>
+				</div>
+				<div>
+					<label>评分修正</label>
+					<input type="text" id="commentNewScore"/>
+					<input type="button" value="确定" onclick="submitNew(this)"/>
+					<input type="button" value="回访" class="reply" onclick="showReply(this)" />
+				</div>
+			</div>
+		</div>
+		<div class="commentDetail">
+			<div class="commentTitle">评价详情
+				<img id='closeIcon' src="/static/images/close-circle.png" onclick="closeCard()" />
+			</div>
+			<form>
+				<div>
+					<label>No.</label><span id="judgementNo">...</span>
+				</div>
+				<div>
+					<label>用户昵称</label><span id="judgementName">...</span>
+				</div>
+				<div>
+					<label>ID</label><span id="judgementID">...</span>
+				</div>
+                <div>
+					<label>来源</label><span id="judgementPlatform">---</span>
+				</div>
+				<div>
+					<label>电话</label><span id="judgementTel">...</span>
+				</div>
+				<div>
+					<label>订单号</label><span id="judgementOrder">...</span>
+				</div>
+				<div>
+					<label>物流服务</label><span><img id="judgementDelivery"/></span>
+				</div>
+				<div>
+					<label>服务态度</label><span><img id="judgementService"/></span>
+				</div>
+				<div>
+					<label>产品质量</label><span><img id="judgementProduct"/></span>
+				</div>
+				<div>
+					<label>分数</label><span id="judgementScore">...</span>
+				</div>
+				<div>
+					<label>评论时间</label><span id="judgementTime">...</span>
+				</div>
+				<div>
+					<label>抓取地址</label><span id="judgementAddress">...</span>
+				</div>
+				<div>
+					<label>评论内容</label>
+					<div>
+						<textarea id="judgementContent" readonly="" style="height: 60px;">xxxxxxxxxxxxxx</textarea>
+					</div>
+				</div>
+			</form>
+			<div class="commentOperation">
+				<div class="commentOperationTitle">评分操作</div>
+				<div>
+					<label>系统评分</label><span id="judgementSysScore">...</span>
+					<label>人工评分</label><span id="judgementArtiScore">...</span>
+				</div>
+				<div>
+					<label>评分修正</label>
+					<input type="text" id="judgementNewScore"/>
+					<input type="button" value="确定" onclick='submitNew(this)'/>
+					<input type="button" value="回访" class="reply" onclick="showReply(this)" />
+				</div>
+			</div>
+		</div>
+		<div class="replyBox">
+			<div class="replyTitle">回访</div>
+			<img src="/static/images/close-circle.png" onclick="closeReply()" />
+			<div class="replyInfo">
+				<div><span>No.</span></span><span id="replyNo"></span></div>
+				<div><span>用户姓名/昵称：</span><span id="replyName"></span></div>
+				<div><span>联系方式：</span><span id="replyTel"></span></div>
+				<div><span>回访内容：</span>
+					<textarea id="history" readonly></textarea>
+					<textarea id="replyContent" onfocus="clearContent(this)">请输入回访内容...</textarea>
+				</div>
+			</div>
+			<div style="text-align: center;">
+				<input type="button" value="提交" onclick="submitReply()" />
+			</div>
+		</div>
+	</body>
+</html>
